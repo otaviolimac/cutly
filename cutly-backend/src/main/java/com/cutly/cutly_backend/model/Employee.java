@@ -1,18 +1,15 @@
 package com.cutly.cutly_backend.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "employee")
+public class Employee {
 
     // Atribute
     @Id
-    @Column(name = "id")
-    public Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public int id;
 
     @Column(name = "name")
     public String name;
@@ -27,7 +24,7 @@ public class User {
     public String email;
 
     // Constructor
-    public User(String name, int age, String cpf, String email) {
+    public Employee(String name, int age, String cpf, String email) {
         this.name = name;
         this.age = age;
         this.cpf = cpf;
@@ -35,7 +32,7 @@ public class User {
     }
 
     // Class constructor
-    public User(){};
+    public Employee(){};
 
     //Getter and Setter
     public String getName() {
