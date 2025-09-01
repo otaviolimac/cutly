@@ -7,9 +7,10 @@ import jakarta.persistence.*;
 public class Employee {
 
     // Atribute
+
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public String id;
 
     @Column(name = "name")
     public String name;
@@ -65,5 +66,24 @@ public class Employee {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String toString(){
+        return "Nome: " +
+                name +
+                "\nage: " +
+                age +
+                "\nCPF: " +
+                cpf +
+                "\nE-mail: " +
+                email;
     }
 }
