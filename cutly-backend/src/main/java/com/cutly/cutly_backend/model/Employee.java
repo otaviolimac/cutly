@@ -24,12 +24,23 @@ public class Employee {
     @Column(name = "email")
     public String email;
 
+    // Add 31/08/25
+    @Column(name = "gender")
+    public char gender;
+
+    @Column(name = "birthData")
+    public String birthData;
+
     // Constructor
-    public Employee(String name, int age, String cpf, String email) {
+    public Employee(String name, int age, String cpf, String email, char gender, String birthData) {
         this.name = name;
         this.age = age;
         this.cpf = cpf;
         this.email = email;
+
+        // Add 31/08/25
+        this.gender = gender;
+        this.birthData = birthData;
     }
 
     // Class constructor
@@ -76,14 +87,34 @@ public class Employee {
         this.id = id;
     }
 
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        gender = gender;
+    }
+
+    public String getBirthData() {
+        return birthData;
+    }
+
+    public void setBirthData(String birthData) {
+        this.birthData = birthData;
+    }
+
     public String toString(){
         return "Nome: " +
                 name +
-                "\nage: " +
+                "\nAge: " +
                 age +
                 "\nCPF: " +
                 cpf +
                 "\nE-mail: " +
-                email;
+                email +
+                "\nGender: " +
+                gender +
+                "\nBirth data: " +
+                birthData;
     }
 }

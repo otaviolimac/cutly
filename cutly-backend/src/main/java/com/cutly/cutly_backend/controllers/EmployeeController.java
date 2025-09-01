@@ -2,8 +2,6 @@ package com.cutly.cutly_backend.controllers;
 
 import com.cutly.cutly_backend.model.Employee;
 import com.cutly.cutly_backend.repository.EmployeeRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -53,7 +51,7 @@ public class EmployeeController {
 
     }
 
-    // to change informations about the employee
+    // to change information about the employee
     @PutMapping("{id}")
     public void updateEmployee (@PathVariable("id") String id,
                                 @RequestBody Employee employee){
